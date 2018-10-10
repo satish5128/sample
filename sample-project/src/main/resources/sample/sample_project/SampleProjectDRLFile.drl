@@ -1,2 +1,63 @@
 package sample.sample_project;
 
+//from row number: 1
+//Initial price for teenagers
+rule "Row 1 sampleGDTable"
+	dialect "mvel"
+	when
+		Driver : DriverProfile( age == 18 , gender in ( "Male" ) , state in ( "AP" ) , hasPreviousIncidents == true )
+		CAR : CarProfile( hasAlarm == true , hasGarage == true )
+	then
+		insertLogical( new PriceQuotation() );
+end
+
+//from row number: 2
+//Price increase for teenager drivers whose cars doesn't have alarms and garages
+rule "Row 2 sampleGDTable"
+	dialect "mvel"
+	when
+		Driver : DriverProfile( age == 22 , gender in ( "Male" ) , state in ( "TS" ) , hasPreviousIncidents == false )
+	then
+		insertLogical( new PriceQuotation() );
+end
+
+//from row number: 3
+//Price increase for teenager drivers whose cars doesn't have alarms and garages and also have historic of incidents
+rule "Row 3 sampleGDTable"
+	dialect "mvel"
+	when
+		Driver : DriverProfile( age == 18 , gender in ( "Male" ) , state in ( "JK" ) , hasPreviousIncidents == true )
+	then
+		insertLogical( new PriceQuotation() );
+end
+
+//from row number: 4
+//Initial price for male customers
+rule "Row 4 sampleGDTable"
+	dialect "mvel"
+	when
+		Driver : DriverProfile( age == 21 , gender in ( "Male" ) )
+		CAR : CarProfile( hasAlarm == true )
+	then
+		insertLogical( new PriceQuotation() );
+end
+
+//from row number: 5
+//Special prices for ladies
+rule "Row 5 sampleGDTable"
+	dialect "mvel"
+	when
+		Driver : DriverProfile( age == 28 , gender in ( "Female" ) , state in ( "AP" ) , hasPreviousIncidents == true )
+	then
+		insertLogical( new PriceQuotation() );
+end
+
+//from row number: 6
+//Initial price for female customers
+rule "Row 6 sampleGDTable"
+	dialect "mvel"
+	when
+		Driver : DriverProfile( age == 18 , gender in ( "Female" ) )
+	then
+end
+
