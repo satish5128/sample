@@ -12,6 +12,8 @@ public class CarProfile implements java.io.Serializable
    private java.lang.Boolean hasAlarm;
    private java.lang.Boolean hasGarage;
 
+   private java.lang.Boolean hasnumberplate;
+
    public CarProfile()
    {
    }
@@ -36,10 +38,22 @@ public class CarProfile implements java.io.Serializable
       this.hasGarage = hasGarage;
    }
 
-   public CarProfile(java.lang.Boolean hasAlarm, java.lang.Boolean hasGarage)
+   public java.lang.Boolean getHasnumberplate()
+   {
+      return this.hasnumberplate;
+   }
+
+   public void setHasnumberplate(java.lang.Boolean hasnumberplate)
+   {
+      this.hasnumberplate = hasnumberplate;
+   }
+
+   public CarProfile(java.lang.Boolean hasAlarm, java.lang.Boolean hasGarage,
+         java.lang.Boolean hasnumberplate)
    {
       this.hasAlarm = hasAlarm;
       this.hasGarage = hasGarage;
+      this.hasnumberplate = hasnumberplate;
    }
 
 }
