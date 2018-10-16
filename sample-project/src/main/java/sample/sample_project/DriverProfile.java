@@ -15,8 +15,6 @@ public class DriverProfile implements java.io.Serializable
    private java.lang.String state;
    private java.lang.Boolean hasPreviousIncidents;
 
-   private java.lang.Boolean hasLicense;
-
    public DriverProfile()
    {
    }
@@ -71,26 +69,15 @@ public class DriverProfile implements java.io.Serializable
       this.hasPreviousIncidents = hasPreviousIncidents;
    }
 
-   public java.lang.Boolean getHasLicense()
-   {
-      return this.hasLicense;
-   }
-
-   public void setHasLicense(java.lang.Boolean hasLicense)
-   {
-      this.hasLicense = hasLicense;
-   }
-
    public DriverProfile(java.lang.Integer age, java.lang.String gender,
          java.lang.String name, java.lang.String state,
-         java.lang.Boolean hasPreviousIncidents, java.lang.Boolean hasLicense)
+         java.lang.Boolean hasPreviousIncidents)
    {
       this.age = age;
       this.gender = gender;
       this.name = name;
       this.state = state;
       this.hasPreviousIncidents = hasPreviousIncidents;
-      this.hasLicense = hasLicense;
    }
 
 }
